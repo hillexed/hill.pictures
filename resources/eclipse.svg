@@ -1,0 +1,6 @@
+    <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 100 C 40 30, 160 30, 200 100" stroke="black" fill="black"/>
+        <!-- <path vector-effect="non-scaling-stroke" d="M -10 90 C 40 20, 160 20, 210 90" stroke="white" stroke-width="20px" opacity="0.3"/> -->
+        <path vector-effect="non-scaling-stroke" d="M -10 100 C 40 30, 160 30, 210 100" stroke="red" stroke-width="3px"/>
+        <path vector-effect="non-scaling-stroke" d="M -10 102 C 40 32, 160 32, 210 102" stroke="white" stroke-width="3px"/>
+    </svg>
