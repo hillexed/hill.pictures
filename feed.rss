@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+    <channel>
+	    <title>Hill.Pictures</title>
+	    <description>Whatever Hill is up to</description>
+	    <link>https://hill.pictures</link>
+	    <atom:link href="https://hill.pictures/feed.rss" rel="self" type="application/rss+xml" />
+	    <language>en-us</language>
+		    <item>
+			    <title>Test Item</title>
+			    <link>https://hill.pictures</link>
+			    <description>This is here so that RSS feed readers can find this feed.</description>
+			    <pubDate>Fri, 1 Oct 2024 17:03 GMT</pubDate>
+			    <source url="https://hill.pictures">Hill.Pictures</source>
+		    </item>
+    </channel>
+</rss>
