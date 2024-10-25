@@ -1,0 +1,33 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+    <div class="posts-list">
+      {{ range .Paginator.Pages }}
+
+        <a href="{{ .RelPermalink }}">
+            {{if .LinkTitle}}
+                <h1>{{.LinkTitle}}</h1>
+            {{else}}
+                <h1>{{"Untitled Post"}}</h1>
+            {{end}}</a>
+        {{ .Summary }}
+      {{ end }}
+    </div>
+    {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+      <ul class="pager main-pager">
+        {{ if .Paginator.HasPrev }}
+          <li class="previous">
+            <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; Newer</a>
+          </li>
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+          <li class="next">
+            <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">Older &rarr;</a>
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+
+
+{{ end }}

@@ -1,0 +1,143 @@
+
+h1{
+    color: #f44;
+}
+
+a {
+  color: #f44;
+}
+header a{
+  text-decoration: none;
+}
+
+body{
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Sanchez;
+    line-height: 1.5;
+    margin: 0;
+    
+}
+@font-face {
+  font-family: 'Sanchez';
+  src: url('/resources/Sanchez-Regular.ttf');
+}
+
+main{
+    max-width: 768px;
+    margin: 0 auto;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    
+
+    background-color: #000;
+    background-image: url("/resources/eclipse-inverted.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+    background-position: bottom center, 50%, 50%;
+    padding-bottom: 50px;
+
+    margin-bottom: 1rem;
+}
+header h1{
+    color: white;
+}
+header a{
+    color: #f44;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+li, ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.navlinks-children{
+    /* appears uponhover */
+  display: none;
+  position: absolute;
+  border-radius: 0em 0em 1em 1em;
+  background-color: #000;
+  border: 1px solid #f44;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 0.25em;
+}
+
+.dropdown::after{
+    content: "▸";
+    color: #f44;
+}
+
+.dropdown:hover::after{
+    content: "▾";
+}
+
+.dropdown:hover .navlinks-children {display: block;}
+.dropdown-content a:hover {background-color: #ddd;}
+
+.categories{
+    display: flex;
+    justify-content: center;
+}
+.catlink{
+    font-size: 1.2;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 1em;
+    border: 1px solid white;
+}
+
+footer {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.footer-icon{
+  background-color: white;
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+}
+
+.footer-circle{
+  background-color: #f44;
+  border-radius: 3em;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.rss{
+    mask: url("/icons/rss.svg") no-repeat;
+    margin-left: 0.4em;
+}
+.email{
+    mask: url("/icons/email.svg") no-repeat;
+}
+.mastodon{
+    mask: url("/icons/mastodon.svg") no-repeat;
+    margin-left: 0.3em;
+}
+
+

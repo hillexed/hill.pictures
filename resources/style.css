@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Sanchez;
+}
+@font-face {
+  font-family: 'Sanchez';
+  src: url('resources/Sanchez-Regular.ttf');
+}
+
+article{
+    max-width: 800px;
+    margin: 0 auto;
+}
+header{
+    display: flex;
+    justify-content: center;
+
+    background-color: #000;
+    background-image: url("resources/eclipse-inverted.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+    background-position: bottom center, 50%, 50%;
+    padding-bottom: 50px;
+}
+.categories{
+    display: flex;
+    justify-content: center;
+}
+.catlink{
+    font-size: 1.2;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 1em;
+    border: 1px solid white;
+    
+}
+

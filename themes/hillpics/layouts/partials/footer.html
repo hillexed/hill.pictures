@@ -1,0 +1,35 @@
+<div class="row">
+    <ul class="footer-links">
+      {{ range .Site.Data.hillpics.social.social_icons }}
+        {{- if isset $.Site.Params.author .id }}
+          <li>
+	        {{ if or ( hasPrefix ( index $.Site.Params.author .id ) "http://" ) ( hasPrefix ( index $.Site.Params.author .id ) "https://" ) }}
+	          <a {{ if .rel }}rel="{{ .rel }}" {{- end}} href="{{ printf "%s" (index $.Site.Params.author .id) }}" title="{{ .title }}">
+	        {{ else }}
+	          <a {{ if .rel }}rel="{{ .rel }}" {{- end}} href="{{ printf .url (index $.Site.Params.author .id) }}" title="{{ .title }}">
+	        {{ end }}
+              <span class="fa-stack">
+                <i class="footer-circle">
+                    <i class="footer-icon {{ .id}}"></i>
+                </i>
+              </span>
+            </a>
+          </li>
+        {{- end -}}
+      {{ end }}
+      {{ if .Site.Params.rss }}
+      {{ with .OutputFormats.Get "RSS" }}
+      <li>
+        <a href="{{ .RelPermalink }}" title="RSS">
+          <span class="fa-stack">
+            <i class="footer-circle">
+                <i class="footer-icon rss"></i>
+            </i>
+          </span>
+        </a>
+      </li>
+      {{ end }}
+      {{ end }}
+    </ul>
+<p>Copyright {{ now.Year }}. Made using Hugo!</p>
+

@@ -1,0 +1,80 @@
+baseurl = "https://hill.pictures"
+DefaultContentLanguage = "en"
+title = "Hill's Space"
+# Using theme as git submodule 
+theme = "hillpics"
+# Or when using theme as hugo module
+# theme = "github.com/halogenica/beautifulhugo"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+[Services]
+  [Services.Disqus]
+    # Shortname = "XXX"
+  [Services.googleAnalytics]
+    # id = "XXX"
+
+[Params]
+#  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
+  subtitle = "Build a beautiful and simple website in minutes"
+  mainSections = ["post","posts"]
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = false
+  readingTime = true
+  wordCount = true
+  useHLJS = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+  selfHosted = true
+
+[Params.author]
+  # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")
+  name = "hillexed"
+  website = "hill.pictures"
+  email = "hillexed@email.com"
+  # github = "hillexed"
+  mastodon = "https://unstable.systems/@hillexed"
+  # bandcamp = "hillexed"
+  # itchio = "hillexed"
+
+[[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+
+[[menu.main]]
+    name = "Astrophotos"
+    url = "/astrophotos/"
+    weight = 1
+
+[[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    weight = 2
+
+[[menu.main]]
+    parent = "projects"
+    name = "4.5\" Hadley"
+    url = "/hadley/"
+    weight = 1
+
+
+[[menu.main]]
+    parent = "projects"
+    name = "Zelbaba"
+    url = "/zelbaba"
+    weight = 4
+
+[[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 3
+
+[markup.goldmark.renderer]
+  unsafe = true

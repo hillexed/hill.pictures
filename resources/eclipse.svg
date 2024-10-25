@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="200"
+   height="100"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="eclipse.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3">
+    <linearGradient
+       id="linearGradient5"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.72517377;"
+         offset="0.64672667"
+         id="stop6" />
+      <stop
+         style="stop-color:#747474;stop-opacity:0.25033072;"
+         offset="0.80506963"
+         id="stop8" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop7" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5"
+       id="radialGradient7"
+       cx="100"
+       cy="99.305458"
+       fx="100"
+       fy="99.305458"
+       r="118.9803"
+       gradientTransform="matrix(1.6969028,0,0,1.5743419,-69.690292,32.145105)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.0724986"
+     inkscape:cx="90.317372"
+     inkscape:cy="48.006531"
+     inkscape:window-width="1366"
+     inkscape:window-height="702"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <ellipse
+     style="opacity:1;mix-blend-mode:normal;fill:url(#radialGradient7);stroke:none;stroke-width:5.55406"
+     id="path4"
+     cx="100"
+     cy="188.48586"
+     rx="199.6474"
+     ry="183.88913" />
+  <path
+     d="M 0 100 C 40 30, 160 30, 200 100"
+     stroke="black"
+     fill="black"
+     id="path1" />
+  <!-- <path vector-effect="non-scaling-stroke" d="M -10 90 C 40 20, 160 20, 210 90" stroke="white" stroke-width="20px" opacity="0.3"/> -->
+  <path
+     vector-effect="non-scaling-stroke"
+     d="M -10 100 C 40 30, 160 30, 210 100"
+     stroke="red"
+     stroke-width="3px"
+     id="path2" />
+  <path
+     vector-effect="non-scaling-stroke"
+     d="M -10 102 C 40 32, 160 32, 210 102"
+     stroke="white"
+     stroke-width="3px"
+     id="path3" />
+</svg>

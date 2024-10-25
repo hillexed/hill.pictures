@@ -1,0 +1,36 @@
+[[social_icons]]
+id = "email"
+url = "mailto:%s"
+title = "Email me"
+icon = "fas fa-envelope"
+
+[[social_icons]]
+id = "github"
+url = "https://github.com/%s"
+title = "GitHub"
+icon = "fab fa-github"
+
+[[social_icons]]
+id = "bandcamp"
+url = "https://%s.bandcamp.com/"
+title = "Bandcamp"
+icon = "fab fa-bandcamp"
+
+[[social_icons]]
+id = "itchio"
+url = "https://itch.io/profile/%s"
+title = "Itch.io"
+icon = "fas fa-gamepad"
+
+[[social_icons]]
+id = "mastodon"
+url = "https://%s"
+title = "Mastodon"
+icon = "fab fa-mastodon"
+rel = "me"
+
+[[social_icons]]
+id = "about"
+url = "%s"
+title = "About"
+icon = "fas fa-at"
