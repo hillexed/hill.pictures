@@ -1,4 +1,8 @@
-Published: 2023-05-10T18:39:09.502Z
+---
+title: I'M MAD AT AMERICAN PIPES
+date: 2023-05-10T18:39:09.502Z
+tags: ["hadley"]
+---
 
 I have a 1/2" diameter hole. I want to put a pipe inside the hole. What size PVC pipe fits into a 1/2" hole?
 
