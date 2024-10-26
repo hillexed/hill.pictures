@@ -13,7 +13,6 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 
 {{- $original := .Page.Resources.GetMatch (or (.Get "src") (.Get "link"))}}
 {{if $original}}
-    {{ "resi" }}
     {{- $resizedThumbnail := $original.Resize "320x" }}
     {{- $thumb = $resizedThumbnail.RelPermalink }}
 {{ end }}
