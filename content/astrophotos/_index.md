@@ -1,4 +1,6 @@
-# Astrophotos
+---
+title: Astrophotos
+---
 
 These are some of my favorite photos, organized into galleries.
 

@@ -1,4 +1,6 @@
-# My First Telescope: the Hadley
+---
+title: "My First Telescope: the Hadley"
+---
 
 {{< img src="PART_1693457620331_IMG_3090.jpg" alt="The Hadley telescope!">}}
 

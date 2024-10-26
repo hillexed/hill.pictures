@@ -1,4 +1,5 @@
 ---
+title: "The Legend of Zelbaba: A Linkeke Between Words"
 ---
 {{< img "zelbabaLogo.png" "The Legend of Zelbaba: A Linkeke Between Words" >}}
 
