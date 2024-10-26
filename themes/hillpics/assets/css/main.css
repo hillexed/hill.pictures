@@ -75,12 +75,12 @@ li, ul{
 }
 
 .dropdown::after{
-    content: "▸";
+    content: " ▸";
     color: #f44;
 }
 
 .dropdown:hover::after{
-    content: "▾";
+    content: " ▾";
 }
 
 .dropdown:hover .navlinks-children {display: block;}
