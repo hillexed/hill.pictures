@@ -6,7 +6,7 @@ Hi! I'm hillexed. This is my space. It's under construction. Eventually it will 
 
 Take a look at some:
     <div class="categories">
-        <a class="catlink" href="/astrophotography">
+        <a class="catlink" href="/astrophotos">
         Astrophotography
         </a>
         <a class="catlink" href="/hadley">
