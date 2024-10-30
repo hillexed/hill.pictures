@@ -1,5 +1,3 @@
-## Front Page Content
-
 Hi! I'm hillexed. This is my space. You can find info on 3D printed astronomy, math, generative art, and more.
 
 <img src="/resources/saturn2024.jpg" alt="Saturn!"></img>
