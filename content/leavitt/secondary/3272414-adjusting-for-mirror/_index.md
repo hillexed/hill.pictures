@@ -1,0 +1,9 @@
+
+---
+title: "Adjusting for mirror size"
+date: 2023-10-23T14:55:28.504Z
+tags: ["The Cohost Global Feed","3d printing","hillescopebuilding","astronomy"]
+---
+
+I got a mirror that's 2.3 inches wide. However, several weeks ago, I printed a mirror holder that was designed to fit a mirror 2.46 inches wide. Sure, I could just use the bigger holder, but the bigger the secondary holder the more light it blocks from reaching your mirror. Is it worth a smaller secondary mirror holder that will block half a square inch less light? Yes, I decided. So I opened up the model and slightly scaled it down. It was a bit tricky because I didn't want to scale down the nut and screw holes, but I counted the sizes and scaled down the outside vertices in blender. I feel bad about wasting my previous print, but plastic is so cheap I'll only feel a little bad about it.
+
