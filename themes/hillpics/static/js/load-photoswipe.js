@@ -68,7 +68,37 @@ $( document ).ready(function() {
 				bgOpacity: 0.8,
 				showHideOpacity: true
 			}
-			new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options).init();
+			let ps = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+/*
+            //process videos
+            ps.addFilter('itemData', (itemData, index) => {
+              const isVideo = itemData.element.dataset.isVideo;
+              console.log(isVideo)
+              if (isVideo) {
+                itemData.isVideo = isVideo;
+              }
+              return itemData;
+            });
+
+            ps.on('contentLoad', (e) => {
+                const { content } = e;
+                if (content.isVideo) {
+                  // prevent the deafult behavior
+                  e.preventDefault();
+
+                  content.element = document.createElement('video');
+                  content.element.src = content.data.src;
+                  content.element.setAttribute('alt', '');
+                  content.element.className = 'pswp__img';
+
+                  const iframe = document.createElement('iframe');
+                  iframe.setAttribute('allowfullscreen', '');
+                  iframe.src = content.data.googleMapUrl;
+                  content.element.appendChild(iframe);
+                }
+            });*/
+
+            ps.init();
 		});	
 	});
 });

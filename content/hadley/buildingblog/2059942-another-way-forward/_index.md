@@ -1,0 +1,19 @@
+
+---
+title: "Another Way Forward"
+date: 2023-07-15T15:31:44.318Z
+tags: ["astronomy","The Cohost Global Feed"]
+---
+
+Last telescope update I finished mount v2 and was stuck because it wobbled. One way to try again is to make the rods out of metal EMT instead of wooden dowels. I bought a hacksaw and spent a while hacksawing my EMT to the right length before learning there were specific pipe cutting tools that were far easier to use. Oops! I'll also need to redesign my mount to use the larger 0.706in EMT pipes.
+
+Recently I went to my local astronomy club for the first time! It was filled with old retirees who could recognize messier objects by sight like I recognize pokemon. Incredible! As I talked about my telescope, eventually I nerd-sniped someone into helping me brainstorm how to resist the shear from the top twisting. They suggested turning the bottom part of the mount into a shear-resistant two-level truss, so that the vertical rods extend upwards to support the top part. 
+
+<img src="https://staging.cohostcdn.org/attachment/002f655b-cfac-4443-a460-b0af8a154d41/design.png"></img>
+
+Apparently a truss is stable because of tension lengthwise along the rods - a theoretical truss can freely rotate at every vertex. These theoretical rods have no bending resistance. In practice of course rods do have bending resistance, and that's what would resist my twisting. It's worth a shot.
+
+I designed some parts that include at least part of those truss structures to see if it would help. I have some wood left over, so I'll test if this makes the mount any more rigid before designing an EMT mount.
+<img src="https://staging.cohostcdn.org/attachment/4780f427-fe64-4081-919b-595ea8499538/Screenshot%20from%202023-07-15%2011-29-39.png"></img>
+Hope it works.
+

@@ -1,0 +1,33 @@
+
+---
+title: "Attacking vibration in Hill Mount v3"
+date: 2023-08-22T16:56:49.786Z
+tags: ["The Cohost Global Feed","astronomy","3d printing"]
+---
+
+<a href="https://cohost.org/hillexed/post/2267354-pictures-from-my-3d">Telescope mount v3</a> is pretty good, but it still wobbles slightly. If I touch or move the telescope, it wobbles a bit before settling down in 2-3 seconds. Before it settles down, Saturn turns into two images of Saturn next to each other.
+
+<img src="https://staging.cohostcdn.org/attachment/b1fad28c-efcc-4a72-be03-38ad1b71f397/image.png"></img>
+
+<details><summary>I can use that picture and do the math to see how much it's wobbling:</summary>https://www.timeanddate.com/astronomy/planets/distance says Saturn is 18.96" right now. That's a second of arc, 1/60 of a minute of arc, which is 1/60 of a degree. That means it wobbles 2 saturns * 18.96 arcseconds/saturn * 1/60 * 1/60 * 2π/360 radians/arcsecond = .0001838 radians. My telescope is about 1.75 feet long from the center point, so since sin θ = o/h, the tip of the telescope is moving side-to-side a distance of h * sin θ ≈ 1.5ft * .00009192 = 0.08403 mm in that picture. Wow, that's about one printed layer line.</details>
+
+How do I stop that?
+
+Right now my telescope mount looks like this. It has a C-shaped top, so the telescope can rotate in and out. 
+<img src="https://staging.cohostcdn.org/attachment/424a9f30-1eba-4dba-9cd4-277daeede8ea/image.png" alt="A triangular base with poles going up to a C-shaped top part where the telescope sits"></img>
+
+It's not a full truss - I can't put a bar between the two tips of the C because that's where the telescope goes. As a result, the tips of the C are only supported at one side, so they can move in and outwards. Experimentally, if I put pressure on the top part I can make the top part shift slightly in the xy plane.
+
+I tried designing <a href="https://cohost.org/hillexed/post/2063847-built-part-of-it">a tiny truss add-on to the front</a> to help resist sideways force for mount v2:
+<img src="https://staging.cohostcdn.org/attachment/5e202ea8-f5c2-4583-8105-8f2a34d0ea5d/IMG_20230715_163510573_HDR_1.jpg?width=675&auto=webp&dpr=1"></img>
+
+I tried remaking it for mount v3! This time, here's what mount v3 looks like. The rectangle in the center marks the telescope Bonk Zone, where I can't put anything without hitting the telescope.
+
+<img src="https://staging.cohostcdn.org/attachment/15131593-90dc-4b02-aaff-8ab6653e59eb/image.png" alt="The telescope mount viewed from the front, where it looks trapezoidal. There's a rectangle inside it"></img>
+
+I printed it out, put it together, and noticed it was a very tight fit. Looks like I forgot to add tolerance to the hole sizes. I tried forcing it in anyways to see if it would work, and...
+
+<img src="https://staging.cohostcdn.org/attachment/abcd9615-6d87-4595-9493-3fba4d6d7cd2/image.png" alt="a 3D printed part cracked in half, with half on the ground"></img>
+
+oh well. let's see if it works once I reprint with bigger holes.
+

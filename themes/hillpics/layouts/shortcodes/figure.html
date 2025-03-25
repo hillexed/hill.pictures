@@ -1,5 +1,8 @@
 <!--
 Put this file in /layouts/shortcodes/figure.html
+
+edited to make videos work
+
 NB this overrides Hugo's built-in "figure" shortcode but is backwards compatible
 Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 -->
@@ -12,20 +15,29 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 {{- $thumb := .Get "src" | default (printf "%s." (.Get "thumb") | replace (.Get "link") ".") }}
 
 {{- $original := .Page.Resources.GetMatch (or (.Get "src") (.Get "link"))}}
-{{if $original}}
+
+{{- $video := or (strings.HasSuffix $original ".mp4") (strings.HasSuffix $original ".webm")}}
+
+{{if and $original (not $video)}}
     {{- $resizedThumbnail := $original.Resize "320x" }}
     {{- $thumb = $resizedThumbnail.RelPermalink }}
 {{ end }}
 
 
 
-
 <div class="box{{ with .Get "caption-position" }} fancy-figure caption-position-{{.}}{{end}}{{ with .Get "caption-effect" }} caption-effect-{{.}}{{end}}" {{ with .Get "width" }}style="max-width:{{.}}"{{end}}>
   <figure {{ with .Get "class" }}class="{{.}}"{{ end }} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img"{{ if .Parent }} style="background-image: url('{{ $thumb }}');"{{ end }}{{ with .Get "size" }} data-size="{{.}}"{{ end }}>
-      <img itemprop="thumbnail" src="{{ $original }}" {{ with .Get "alt" | default (.Get "caption") | default $thumb }}alt="{{.}}"{{ end }} loading="lazy"/><!-- <img> hidden if in .gallery -->
+
+      {{if $video}}
+        <video itemprop="thumbnail" src="{{ $original }}" {{ with .Get "alt" | default (.Get "caption") | default $thumb }}alt="{{.}}"{{ end }} loading="lazy" style="width: 100%" data-pswp-isVideo="true"/><!-- <img> hidden if in .gallery -->
+      {{else}}
+        <img itemprop="thumbnail" src="{{ $original }}" {{ with .Get "alt" | default (.Get "caption") | default $thumb }}alt="{{.}}"{{ end }} loading="lazy"/><!-- <img> hidden if in .gallery -->
+      {{end}}
+
     </div>
     {{ with .Get "link" | default (.Get "src") }}<a href="{{.}}" itemprop="contentUrl"></a>{{ end }}
+
     {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
       <figcaption>
         {{- with .Get "title" }}<h4>{{.}}</h4>{{ end }}

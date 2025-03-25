@@ -2,16 +2,30 @@
     <h1>{{ .Title }}</h1>
     {{ .Content }}
 
-    <div class="posts-list">
-      {{ range .Paginator.Pages }}
+    {{if gt (len .Paginator.Pages) 0}}
+        <div class="posts-divider">
+        Posts:
+        </div>
 
-        <a href="{{ .RelPermalink }}">
-            {{if .LinkTitle}}
-                <h1>{{.LinkTitle}}</h1>
-            {{else}}
-                <h1>{{"Untitled Post"}}</h1>
-            {{end}}</a>
-        {{ .Summary }}
+    {{ end }}
+
+    <div class="posts-list">
+
+      {{ range .Paginator.Pages }}
+        <div class="post-preview">
+
+            <a href="{{ .RelPermalink }}">
+                {{if .LinkTitle}}
+                    <h1>{{.LinkTitle}}</h1>
+                {{else}}
+                    <h1>{{"Untitled Post"}}</h1>
+                {{end}}</a>
+
+            {{ partial "post_meta.html" . }}
+
+            {{ .Summary }}
+            <a href="{{ .Permalink }}" class="post-read-more">Read More</a>
+        </div>
       {{ end }}
     </div>
     {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}

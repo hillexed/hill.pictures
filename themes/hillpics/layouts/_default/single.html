@@ -1,10 +1,24 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
 
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  {{ partial "post_meta.html" . }}
 
   {{ .Content }}
+
+  {{ if ne .Type "page" }}
+  <ul class="pager blog-pager">
+    {{ if .PrevInSection }}
+      <li class="previous">
+        <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
+      </li>
+    {{ end }}
+    {{ if .NextInSection }}
+      <li class="next">
+        <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
+      </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}

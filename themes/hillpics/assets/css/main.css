@@ -1,7 +1,16 @@
 
 h1{
     color: #f44;
+    margin: 0;
 }
+
+h1{
+text-align: center;
+}
+.posts-list h1{
+text-align: left;
+}
+
 
 a {
   color: #f44;
@@ -140,4 +149,41 @@ footer {
     margin-left: 0.3em;
 }
 
+.posts-divider{
+    baorder-top: 1px solid #f44;
+    text-align: center;
+    font-size: 1.3;
+    font-weight: bold;
+    padding: 1em;
+}
 
+.post-preview{
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+}
+
+.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;border:1px solid #333}
+.list-group-item:first-child{border-top-left-radius:1em;border-top-right-radius:1em}
+.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:1em;border-bottom-left-radius:1em}
+
+.badge{background-color: #944; color: black; border-radius: 0.7em; padding: 0.2em;}
+
+.view-all{
+    opacity: 0.8;
+}
+.view-all:hover{
+transform: scale(1.01);
+}
+.view-all:active{
+border: none;
+}
+
+.post-meta{
+    opacity: 0.8;
+    font-size: 80%;
+    display: inline-block;
+    margin-bottom: 1em;
+}

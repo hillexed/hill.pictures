@@ -2,4 +2,4 @@
 title: "Blog"
 ---
 
-Here's a list of posts:
+There are all kinds of things in here.
