@@ -12,7 +12,9 @@ Someone brought an extremely accurate "double pass autocollimator" tester to an 
 
 <span style="margin: 3em; padding: 1em; border-radius: 2em; background-color: darkblue; color: white;"> 🎉 First mirror: complete! 🎉 </span>
 
-That's so cool! I thought I was slightly overparabolized based on my Foucalt testing. I guess not! That's so cool!
+That's so cool! I thought I was slightly overparabolized based on my Foucalt testing. I guess not!
+
+I don't know the exact numeric accuracy of my mirror without an interferometer. The actual smoothness is "no deviations visible on a double pass autocollimation test". A professional optician who was helping with the test estimated that as 1/20th wave or better, and I'm inclined to take their word for it. 
 
 Start to finish: 8 months.
 Total time spent working on this mirror, not counting setup or lap-pressing or testing time): 32.9 hours.
