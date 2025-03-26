@@ -4,7 +4,7 @@ date: 2024-07-27T23:40:39.464Z
 tags: ["diy","hillescopebuilding","astronomy"]
 ---
 {{< gallery >}}
-{{< figure alt="" src="image.png" >}}
+{{< figure alt="A graph showing that my mirror is focusing light to within 0.006&quot; of where a theoretical perfect parabola shape should be focusing light to. The place a parabola focuses light depends on the slope, so it's very close to a parabola shape itself!" src="image.png" >}}
 {{< figure alt="" src="image2_1.jpeg" >}}
 {{< /gallery >}}
 
