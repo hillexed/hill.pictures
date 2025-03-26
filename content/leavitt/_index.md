@@ -10,7 +10,7 @@ title: "My Second Telescope: the Leavitt"
 
 After building the Hadley, I wanted something more. There were a few ways to take better astrophotos: aim properly, collect more light, motorize a mount to follow earth's rotation, or build a bigger telescope to collect more light. I chose to build a bigger telescope.
 
-The Leavitt is the product of a year of work. This telescope is an 8" diameter f/4.5, with a focal length of 8.95". Its 3-pole design makes for easy adjustment of focal length to accomodate a camera fits into a car and weighs less than 20 pounds.
+The Leavitt is the product of a year of work. This telescope is an 8" diameter f/4.5, with a focal length of 48.5". Its 3-pole design makes for easy adjustment of focal length to accomodate a camera fits into a car and weighs less than 20 pounds.
 
 The mirror is an 8" diameter f/4.5, with a focal length of 89.5". I polished and parabolized it myself from January 2024 to August 2024. Its short focal length means the telescope's views are less magnified and therefore brighter, perfect for deep sky objects. It has also given me great views of Mars, Jupiter, and Saturn.
 
