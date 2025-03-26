@@ -184,6 +184,6 @@ border: none;
 .post-meta{
     opacity: 0.8;
     font-size: 80%;
-    display: inline-block;
+    display: block;
     margin-bottom: 1em;
 }
