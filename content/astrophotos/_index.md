@@ -2,7 +2,7 @@
 title: Astrophotos
 ---
 
-These are some of my favorite photos, organized into galleries.
+These are some of my favorite photos, organized into galleries. For the stories behind these photos, check out [posts tagged astrophotography](/tags/astrophotography/).
 
 
 ## Deep Space Objects
@@ -38,6 +38,7 @@ These are some of my favorite photos, organized into galleries.
   {{< figure link="20240408_152754~3_051018.jpg" >}}
   {{< figure link="20240408_152943~2_051015.jpg" >}}
   {{< figure link="IMG_20240408_152905058.jpg" alt="Immediately after the eclipse, we could see half the sky still in the Moon's shadow and half the sky returning to normal" >}}
+  {{< figure link="2024_end_of_an_eclipse.webm" alt="The moon, the day after the eclipse" >}}
   {{< figure link="20240409_202816_3_dayaftereclipse.jpg" alt="The moon, the day after the eclipse" >}}
 {{< /gallery >}}
 

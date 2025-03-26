@@ -1,7 +1,7 @@
 ---
 title: "Not Real Numbers"
 date: 2024-10-25
-tags: ["Math"]
+tags: ["math", "longpost"]
 ---
 
 I rediscovered the [xkcd up goer five text editor](https://splasho.com/upgoer5/), which lets you type using only the 1000 most common english words. So here's my attempt at writing a description of something:

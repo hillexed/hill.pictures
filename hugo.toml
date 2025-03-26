@@ -64,6 +64,18 @@ pygmentsCodefencesGuessSyntax = true
     url = "/hadley/"
     weight = 1
 
+[[menu.main]]
+    parent = "projects"
+    name = "8\" Leavitt"
+    url = "/leavitt/"
+    weight = 1
+
+[[menu.main]]
+    parent = "projects"
+    name = "12\" Meniscus Mirror"
+    url = "/meniscus12/"
+    weight = 2
+
 
 [[menu.main]]
     parent = "projects"

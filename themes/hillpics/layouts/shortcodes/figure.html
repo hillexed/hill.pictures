@@ -11,32 +11,48 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 {{- $.Page.Scratch.Add "figurecount" 1 -}}
 <!-- use either src or link-thumb for thumbnail image -->
 
-
-{{- $thumb := .Get "src" | default (printf "%s." (.Get "thumb") | replace (.Get "link") ".") }}
-
-{{- $original := .Page.Resources.GetMatch (or (.Get "src") (.Get "link"))}}
+{{- $original := or (.Get "src") (.Get "link") }}
+{{- $thumb := $original | default (printf "%s." (.Get "thumb") | replace (.Get "link") ".") }}
 
 {{- $video := or (strings.HasSuffix $original ".mp4") (strings.HasSuffix $original ".webm")}}
 
-{{if and $original (not $video)}}
-    {{- $resizedThumbnail := $original.Resize "320x" }}
-    {{- $thumb = $resizedThumbnail.RelPermalink }}
+{{$imageExists := false}}
+{{ $originalLink := ""}}
+{{ $thumbLink := ""}}
+
+{{with .Page.Resources.GetMatch $original}}
+    {{$imageExists = true}}
+    {{$originalLink = .RelPermalink}}
+    {{$thumbLink = $originalLink}}
 {{ end }}
+
+{{if and $imageExists (not $video)}}
+    {{with .Page.Resources.GetMatch $original}}
+        {{- $resizedThumbnail := .Resize "320x" }}
+        {{- $thumbLink = $resizedThumbnail.RelPermalink }}
+    {{ end }}
+{{end}}
+
+
 
 
 
 <div class="box{{ with .Get "caption-position" }} fancy-figure caption-position-{{.}}{{end}}{{ with .Get "caption-effect" }} caption-effect-{{.}}{{end}}" {{ with .Get "width" }}style="max-width:{{.}}"{{end}}>
   <figure {{ with .Get "class" }}class="{{.}}"{{ end }} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img"{{ if .Parent }} style="background-image: url('{{ $thumb }}');"{{ end }}{{ with .Get "size" }} data-size="{{.}}"{{ end }}>
+    <div class="img"{{ if .Parent }} style="background-image: url('{{ $thumbLink }}');"{{ end }}{{ with .Get "size" }} data-size="{{.}}"{{ end }}>
 
       {{if $video}}
-        <video itemprop="thumbnail" src="{{ $original }}" {{ with .Get "alt" | default (.Get "caption") | default $thumb }}alt="{{.}}"{{ end }} loading="lazy" style="width: 100%" data-pswp-isVideo="true"/><!-- <img> hidden if in .gallery -->
+        <video itemprop="thumbnail" src="{{ $originalLink }}" {{ with .Get "alt" | default (.Get "caption") | default $thumb }}alt="{{.}}"{{ end }} loading="lazy" style="width: 100%" data-pswp-isVideo="true"/><!-- <img> hidden if in .gallery -->
       {{else}}
-        <img itemprop="thumbnail" src="{{ $original }}" {{ with .Get "alt" | default (.Get "caption") | default $thumb }}alt="{{.}}"{{ end }} loading="lazy"/><!-- <img> hidden if in .gallery -->
+        <img itemprop="thumbnail" src="{{ $thumbLink }}" {{ with .Get "alt" | default (.Get "caption") | default $thumb }}alt="{{.}}"{{ end }} loading="lazy"/><!-- <img> hidden if in .gallery -->
+      {{end}}
+
+      {{if not $imageExists}}
+        Unable to find image {{ $original }}
       {{end}}
 
     </div>
-    {{ with .Get "link" | default (.Get "src") }}<a href="{{.}}" itemprop="contentUrl"></a>{{ end }}
+    <a href="{{ $originalLink }}" itemprop="contentUrl"></a>
 
     {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
       <figcaption>

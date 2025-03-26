@@ -2,6 +2,8 @@
 title: "The Mirror Making Process"
 ---
 
+(This page is a work in progress!)
+
 I dove into the rabbit hole of optical fabrication and made my own mirrors for my 8" Leavitt telescope.
 
 When we think of mirrors, we think of mirrors like those on a bathroom wall, which are flat. Telescope mirrors are curved, to focus light to a point. This curvature focuses parallel light rays everywhere on the mirror's surface to the same place, increasing the amount of light the eye can see when looking through a telescope. This curve must be smooth to within a fraction of a wavelength of visible light - 500 nanometers. It is incredible that we can make surfaces that smooth using just muscle power. 
