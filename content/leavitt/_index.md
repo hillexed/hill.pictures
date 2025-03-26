@@ -30,3 +30,4 @@ I didn't buy this telescope's mirror - instead, I manufactured it myself. Amateu
 
 For more, see [my page on mirror grinding](./mirrorgrinding), or check out the [blog posts I made along the way](mirror_polishing/).
 
+

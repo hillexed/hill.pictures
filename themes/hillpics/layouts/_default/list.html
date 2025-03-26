@@ -24,7 +24,10 @@
             {{ partial "post_meta.html" . }}
 
             {{ .Summary }}
-            <a href="{{ .Permalink }}" class="post-read-more">Read More</a>
+
+            {{if .Truncated}}
+                <a href="{{ .Permalink }}" class="post-read-more">Read More</a>
+            {{ end }}
         </div>
       {{ end }}
     </div>
