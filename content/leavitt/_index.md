@@ -28,6 +28,6 @@ Compared to the Hadley's Hill Mount, which is 2.5' tall, my Leavitt mount is 3' 
 
 I didn't buy this telescope's mirror - instead, I manufactured it myself. Amateur mirror making has a long history, and there are textbooks published a hundred years ago that document processes that still works to this day. This was my first time polishing a mirror, and I'm very proud of the end result: a parabolic surface accurate to within 1/20th of a wavelength of visible light - 25 nanometers or so. I worked on this mirror from January 2024 to August 2024, and first light was in December 2024, just in time to see the Mars conjunction.
 
-For more, see [my page on mirror grinding](./mirrorgrinding), or check out the [blog posts I made along the way](mirror_polishing/).
+For more, see [my page on mirror grinding](./mirrorgrinding), or check out the [blog posts I made along the way](buildingblog/).
 
 
