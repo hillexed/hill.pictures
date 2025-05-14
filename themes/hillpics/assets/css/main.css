@@ -5,7 +5,7 @@ h1{
 }
 
 h1{
-text-align: center;
+  text-align: center;
 }
 .posts-list h1{
 text-align: left;
@@ -25,9 +25,9 @@ body{
     color: white;
     font-family: Sanchez;
     line-height: 1.5;
-    margin: 0;
-    
+    font-size: 12pt;
 }
+
 @font-face {
   font-family: 'Sanchez';
   src: url('/resources/Sanchez-Regular.ttf');
@@ -41,20 +41,29 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5em;
-    
-
     background-color: #000;
     background-image: url("/resources/eclipse-inverted.svg");
     background-repeat: no-repeat;
-    background-size: 100% 100px;
+    background-size: 100% 4em;
     background-position: bottom center, 50%, 50%;
-    padding-bottom: 50px;
+    padding-bottom: 3em;
 
     margin-bottom: 1rem;
 }
+header .spacer{
+  flex: 1;
+  max-width: 5em;
+}
+
+@media only screen and (max-device-width : 400px) {
+    body{
+        font-size: 10pt;
+    }
+}
+
 header h1{
-    color: white;
+  color: white;
+  line-height: 0.9;
 }
 header a{
     color: #f44;
@@ -83,9 +92,15 @@ li, ul{
   padding: 0.25em;
 }
 
+.dropdown{
+    padding-right: 1em; /* for the ▸ */
+}
+
 .dropdown::after{
     content: " ▸";
     color: #f44;
+    margin-right: -1em;
+    display: inline-block;
 }
 
 .dropdown:hover::after{
