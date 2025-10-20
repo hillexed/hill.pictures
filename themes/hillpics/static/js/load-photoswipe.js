@@ -1,105 +1,101 @@
+import Photoswipe from './photoswipe.esm.js';
+import PhotoSwipeLightbox from './photoswipe-lightbox.esm.js';
+
 /*
 Put this file in /static/js/load-photoswipe.js
 Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
+edited for photoswipe v5
 */
 
-/* TODO: Make the share function work */
-$( document ).ready(function() {
-	/*
-	Initialise Photoswipe
-	*/
-	var items = []; // array of slide objects that will be passed to PhotoSwipe()
-	// for every figure element on the page:
-	$('figure').each( function() {
-		if ($(this).attr('class') == 'no-photoswipe') return true; // ignore any figures where class="no-photoswipe"
-		// get properties from child a/img/figcaption elements,
-		var $figure = $(this),
-			$a 		= $figure.find('a'),
-			$img 	= $figure.find('img'),
-			$src	= $a.attr('href'), //true source
-			$title  = $img.attr('alt'),
-			$msrc	= $img.attr('src'); //thumbnail source
-		// if data-size on <a> tag is set, read it and create an item
-		if ($a.data('size')) {
-			$src	= $a.attr('href');
-			var $size 	= $a.data('size').split('x');
-			var item = {
-				src		: $src,
-				w		: $size[0],
-				h 		: $size[1],
-				title 	: $title,
-				msrc	: $msrc
-			};
-			//console.log("Using pre-defined dimensions for " + $src);
-		// if not, set temp default size then load the image to check actual size
-		} else {
-			var item = {
-				src		: $src,
-				w		: 800, // temp default size
-				h 		: 600, // temp default size
-				title 	: $title,
-				msrc	: $msrc
-			};
-			//console.log("Using default dimensions for " + $msrc);
-			// load the image to check its dimensions
-			// update the item as soon as w and h are known (check every 30ms)
-			var img = new Image(); 
-			img.src = $src;
-			var wait = setInterval(function() {
-				var w = img.naturalWidth,
-					h = img.naturalHeight;
-				if (w && h) {
-					clearInterval(wait);
-					item.w = w;
-					item.h = h;
-					//console.log("Got actual dimensions for " + img.src);
-				}
-			}, 30);
-	   	}
-		// Save the index of this image then add it to the array
-		var index = items.length;
-		items.push(item);
-		// Event handler for click on a figure
-		$figure.on('click', function(event) {
-			event.preventDefault(); // prevent the normal behaviour i.e. load the <a> hyperlink
-			// Get the PSWP element and initialise it with the desired options
-			var $pswp = $('.pswp')[0];
-			var options = {
-				index: index, 
-				bgOpacity: 0.8,
-				showHideOpacity: true
-			}
-			let ps = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
-/*
-            //process videos
-            ps.addFilter('itemData', (itemData, index) => {
-              const isVideo = itemData.element.dataset.isVideo;
-              console.log(isVideo)
-              if (isVideo) {
-                itemData.isVideo = isVideo;
-              }
-              return itemData;
-            });
-
-            ps.on('contentLoad', (e) => {
-                const { content } = e;
-                if (content.isVideo) {
-                  // prevent the deafult behavior
-                  e.preventDefault();
-
-                  content.element = document.createElement('video');
-                  content.element.src = content.data.src;
-                  content.element.setAttribute('alt', '');
-                  content.element.className = 'pswp__img';
-
-                  const iframe = document.createElement('iframe');
-                  iframe.setAttribute('allowfullscreen', '');
-                  iframe.src = content.data.googleMapUrl;
-                  content.element.appendChild(iframe);
-                }
-            });*/
-
-            ps.init();
-		});	
-	});
+const lightbox = new PhotoSwipeLightbox({
+  gallery: 'body',
+  children: 'figure',
+  thumbSelector: 'figure',
+  pswpModule: Photoswipe,
+  //bgOpacity: 0.6
 });
+lightbox.init();
+
+
+lightbox.addFilter('domItemData', (itemData, element, linkEl) => {
+
+  if(linkEl.dataset.isVideo == "true"){
+    var videoElement = element.querySelector("video");
+
+    let caption = element.querySelector(".hidden-caption-content");
+    //Photoswipe is expecting an <img> to read the `alt` attribute off of to create a caption.
+    //we need to provide our own caption so photoswipe doesn't try to read the `alt` of a video and crash
+    console.log(caption)
+    if(!caption){
+        let dummycaption = document.createElement("div");
+        dummycaption.className = "hidden-caption-content";
+        element.appendChild(dummycaption);
+        dummycaption.innerHTML = linkEl.dataset.alt;
+    }
+
+    itemData.w = videoElement.videoWidth;
+    itemData.h = videoElement.videoHeight;
+    itemData.src = linkEl.href;
+    itemData.type = "video"; //notify contentLoad() below
+  }
+
+  else if (linkEl) {
+
+    let link = linkEl.href;
+    //itemData.msrc = linkEl.dataset.thumbSrc;
+  }
+
+    //console.log(itemData, element, linkEl)
+
+  return itemData
+});
+
+lightbox.on('uiRegister', function() {
+  lightbox.pswp.ui.registerElement({
+    name: 'custom-caption',
+    order: 9,
+    isButton: false,
+    appendTo: 'root',
+    html: 'Caption text',
+    onInit: (el, pswp) => {
+      lightbox.pswp.on('change', () => {
+        const currSlideElement = lightbox.pswp.currSlide.data.element;
+        let captionHTML = '';
+        if (currSlideElement) {
+          const hiddenCaption = currSlideElement.querySelector('.hidden-caption-content');
+          if (hiddenCaption) {
+            // get caption from element with class hidden-caption-content
+            captionHTML = hiddenCaption.innerHTML;
+          } else {
+            // get caption from alt attribute
+            captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
+          }
+        }
+        el.innerHTML = captionHTML || '';
+      });
+    }
+  });
+});
+
+
+
+
+lightbox.on('contentLoad', (e) => {
+    const { content } = e;
+    if (content.type === 'video') {
+      // prevent the deafult behavior
+      e.preventDefault();
+
+      // Create a container for iframe
+      // and assign it to the `content.element` property
+      content.element = document.createElement('video');
+      content.element.innerHTML = "Couldn't display video :("
+      content.element.src = content.data.src;
+      content.element.autoplay = true;
+      content.element.playsinline = true;
+      content.element.controls = true;
+    }
+});
+
+
+lightbox.init();
